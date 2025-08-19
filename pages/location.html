@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Material Icons CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <title>地點搜尋</title>
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+
+    <main>
+      <!-- breadcrumb -->
+      <div class="container d-none d-lg-block">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-lg-10">
+            <li class="breadcrumb-item text-primary-100">
+              <a href="#">首頁</a>
+            </li>
+            <li class="breadcrumb-item text-primary-100">
+              <a href="#">日本</a>
+            </li>
+            <li class="breadcrumb-item text-primary-100">
+              <a href="#">關西</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">大阪</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="container">
+        <div>
+          <h1 class="fw-bold mb-lg-2">大阪</h1>
+          <p class="text-neutral-80 mb-lg-6">
+            大阪，一座融合傳統與現代的城市，擁有豐富的歷史文化、熱鬧的購物街區與世界知名的美食天堂。從氣派的大阪城到霓虹閃爍的道頓堀，每一處都充滿驚喜。無論是第一次造訪，還是再次回味，大阪總能用它的熱情與魅力，讓你留下難忘回憶。
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>
