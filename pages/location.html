@@ -15,29 +15,86 @@
     <%- include('./layout/header'); -%>
 
     <main>
-      <!-- breadcrumb -->
-      <div class="container d-none d-lg-block">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb mb-lg-10">
-            <li class="breadcrumb-item text-primary-100">
-              <a href="#">首頁</a>
-            </li>
-            <li class="breadcrumb-item text-primary-100">
-              <a href="#">日本</a>
-            </li>
-            <li class="breadcrumb-item text-primary-100">
-              <a href="#">關西</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">大阪</li>
-          </ol>
-        </nav>
+      <div class="container mt-lg-20 mt-10">
+        <!-- breadcrumb -->
+        <div class="d-none d-lg-block">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-lg-10">
+              <li class="breadcrumb-item text-primary-100">
+                <a href="#">首頁</a>
+              </li>
+              <li class="breadcrumb-item text-primary-100">
+                <a href="#">日本</a>
+              </li>
+              <li class="breadcrumb-item text-primary-100">
+                <a href="#">關西</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">大阪</li>
+            </ol>
+          </nav>
+        </div>
       </div>
-      <div class="container">
-        <div>
-          <h1 class="fw-bold mb-lg-2">大阪</h1>
-          <p class="text-neutral-80 mb-lg-6">
+      <!-- 景點資訊 -->
+      <div>
+        <!-- 地點簡述 -->
+        <div class="container">
+          <h1 class="fw-bold mb-2 fs-lg-h1 fs-h3">大阪</h1>
+          <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-6">
             大阪，一座融合傳統與現代的城市，擁有豐富的歷史文化、熱鬧的購物街區與世界知名的美食天堂。從氣派的大阪城到霓虹閃爍的道頓堀，每一處都充滿驚喜。無論是第一次造訪，還是再次回味，大阪總能用它的熱情與魅力，讓你留下難忘回憶。
           </p>
+        </div>
+        <!-- 地點圖片 -->
+        <div class="container p-0 mb-lg-20 d-none d-xxl-block">
+          <div class="d-flex flex-wrap gap-2">
+            <!-- 左邊大圖 -->
+            <div style="flex: 0 0 720px">
+              <img
+                src="../assets/images/location/osaka-1.png"
+                alt="osaka-1"
+                class="img-fluid rounded-start-4"
+              />
+            </div>
+
+            <!-- 右邊四張小圖 -->
+            <div class="d-flex flex-wrap gap-2" style="flex: 0 0 568px">
+              <img
+                src="../assets/images/location/osaka-2.png"
+                alt="osaka-2"
+                style="width: 280px; height: auto"
+              />
+              <img
+                src="../assets/images/location/osaka-3.png"
+                alt="osaka-3"
+                style="
+                  width: 280px;
+                  height: auto;
+                  border-top-right-radius: 16px;
+                "
+              />
+              <img
+                src="../assets/images/location/osaka-4.png"
+                alt="osaka-4"
+                style="width: 280px; height: auto"
+              />
+              <img
+                src="../assets/images/location/osaka-5.png"
+                alt="osaka-5"
+                style="
+                  width: 280px;
+                  height: auto;
+                  border-bottom-right-radius: 16px;
+                "
+              />
+            </div>
+          </div>
+        </div>
+        <!-- 行動版--地點圖片 -->
+        <div class="container d-xxl-none d-block">
+          <img
+            src="../assets/images/location/osaka-1.png"
+            alt="osaka-1"
+            class="img-fluid rounded-4 mb-10"
+          />
         </div>
       </div>
     </main>
