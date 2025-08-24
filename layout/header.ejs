@@ -1,24 +1,166 @@
-<nav class="navbar">
-  <div class="container">
-    <div class="navbar-search d-flex align-items-center">
-      <p>
-        <a href="#" class="navbar-brand fw-bold fs-h4 text-primary-100"
-          ># ZOBAA<span class="fst-italic">!</span></a
+<nav class="navbar navbar-light py-3 py-lg-4 bg-light fixed-top">
+  <div class="container position-relative">
+    <div class="d-flex align-items-center me-auto">
+      <a
+        href="index"
+        class="navbar-brand p-0 me-6 fw-bold fs-h5 text-primary-100"
+        ># ZOBAA<span class="fst-italic">!</span></a
+      >
+      <!-- 桌機板--搜尋框 -->
+      <form class="position-relative d-none d-lg-block">
+        <span
+          class="material-symbols-outlined align-bottom text-neutral-60 position-absolute top-50 start-0 translate-middle-y ps-4"
         >
-      </p>
-      <input
-        class="border-0 rounded-3 p-2"
-        type="search"
-        placeholder="搜尋景點、地點或城市"
-      />
+          search
+        </span>
+        <input
+          type="search"
+          class="form-control rounded-1 py-2 ps-10 navbar-lg-search"
+          id="navbar-lg-search"
+          placeholder="搜尋景點、地點或城市"
+        />
+      </form>
     </div>
-    <div class="d-flex align-items-center">
-      <a href="#">
-        <span class="material-icons-outlined text-primary-100">
+    <div class="position-absolute start-0 end-0 px-4 z-1 bg-light">
+      <div class="collapse" id="collapseExample">
+        <div class="d-flex align-items-center">
+          <form class="position-relative w-100">
+            <span
+              class="material-symbols-outlined align-bottom text-neutral-60 position-absolute top-50 start-0 translate-middle-y ps-4"
+            >
+              search
+            </span>
+            <input
+              type="search"
+              class="form-control rounded-1 py-2 ps-10"
+              id="navbar-md-search"
+              placeholder="搜尋景點、地點或城市"
+            />
+          </form>
+          <button
+            type="button"
+            class="p-2 border-0 bg-light"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+          >
+            <span class="material-symbols-outlined align-bottom"> close </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- 行動版--搜尋圖示 -->
+    <button
+      type="button"
+      class="bg-light border-0 p-2 d-lg-none"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseExample"
+    >
+      <span class="material-symbols-outlined align-bottom text-neutral-80">
+        search
+      </span>
+    </button>
+    <!-- 購物車圖示 -->
+    <a href="#" class="border-0 my-2">
+      <span class="position-relative">
+        <span
+          class="position-absolute bottom-50 end-0 translate-middle badge rounded-circle bg-danger-100 cart-tag p-0"
+        >
+          2
+        </span>
+        <span
+          class="material-symbols-outlined align-bottom text-primary-100 py-2 px-3"
+        >
           shopping_cart
         </span>
-      </a>
-      <button class="btn btn-login">登入 / 註冊</button>
+      </span>
+    </a>
+    <!-- 登入樣式 -->
+    <a href="userProfile" class="d-lg-flex align-items-center ms-4 d-none">
+      <img
+        src="../assets/images/userprofile/avatar-1.png"
+        alt="Jessica頭貼"
+        class="profile-img-sm border-0 me-2"
+      />
+      <p class="fw-bold fs-body1 text-primary-100">Jessica</p>
+    </a>
+    <!-- 漢堡選單 -->
+    <button
+      class="border-0 bg-light p-2 d-lg-none"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+    >
+      <span class="material-symbols-outlined align-bottom"> menu </span>
+    </button>
+    <!-- 側邊滑出內容 -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body px-6 pb-6 pt-4 d-flex flex-column">
+        <div>
+          <div
+            class="d-flex align-items-center pb-4 border-bottom border-neutral-40"
+          >
+            <div>
+              <img
+                src="../assets/images/userprofile/avatar-1.png"
+                alt="Jessica頭貼"
+                class="profile-img-sm border-0 me-2"
+              />
+            </div>
+            <div>
+              <p class="fw-bold fs-body1">Jessica</p>
+              <p class="fs-body1">jessica.yen@gamil.com</p>
+            </div>
+          </div>
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mt-4">
+            <li class="nav-item">
+              <a
+                class="nav-link py-3 text-neutral-80 active"
+                aria-current="page"
+                href="#"
+                ><span class="material-symbols-outlined align-bottom me-2">
+                  article </span
+                >訂單管理</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-3 text-neutral-80" href="#"
+                ><span class="material-symbols-outlined align-bottom me-2">
+                  favorite </span
+                >我的收藏</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-3 text-neutral-80" href="#"
+                ><span class="material-symbols-outlined align-bottom me-2">
+                  settings </span
+                >帳號設定</a
+              >
+            </li>
+          </ul>
+        </div>
+        <button
+          type="button"
+          class="btn text-start fs-body1 text-neutral-80 py-3 px-0 mt-auto border-0"
+        >
+          <span class="material-symbols-outlined align-bottom me-2 ms-1">
+            logout </span
+          >登出
+        </button>
+      </div>
     </div>
   </div>
 </nav>

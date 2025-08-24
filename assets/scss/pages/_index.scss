@@ -1,3 +1,114 @@
-.index-title {
-  font-size: 100px;
+.banner {
+  background-image: url("/assets/images/index/hero-bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding-top: 112px;
+}
+.banner-lg-search {
+  margin-bottom: 162px;
+}
+
+@media (min-width: 992px) {
+  .banner {
+    padding-top: 212px;
+  }
+  .banner-lg-search {
+    width: 720px;
+    margin-bottom: 474px;
+  }
+}
+.recommend {
+  background-color: #221f1e;
+  padding-bottom: 88px;
+
+  .card {
+    width: 277px;
+  }
+}
+@media (min-width: 992px) {
+  .recommend .card {
+    width: 25%;
+    max-width: 416px;
+    height: 600px;
+    transition: width 0.5s;
+
+    &:hover {
+      width: 100%;
+    }
+  }
+}
+.recommend .card .btn {
+  display: none !important; /* 預設不出現，也不佔位 */
+}
+.recommend .card:hover .btn {
+  display: flex !important; /* 滑到卡片才顯示 */
+}
+@media (min-width: 992px) {
+  .offset-row {
+    transform: translateX(80px);
+  }
+  .first-step {
+    background-image: url("/assets/images/index/deco-bg.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+.marquee {
+  overflow: hidden;
+
+  p {
+    color: #f3eeec;
+    font-size: 32px;
+    font-weight: bold;
+    white-space: nowrap;
+    height: 38px;
+
+    animation-name: marquee; // 自定義動畫名稱
+    animation-duration: 10s; // 用於設定動畫完整時間
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    @keyframes marquee {
+      from {
+        transform: translateX(-25%);
+      }
+      to {
+        transform: translateX(0%);
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .marquee {
+    p {
+      height: 156px;
+      font-size: 130px;
+    }
+  }
+}
+.states .nav-link {
+  background-color: $light;
+  color: $primary-100;
+  margin-right: 8px;
+}
+.states .card {
+  width: 312px;
+}
+.states .card img {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+}
+@media (min-width: 992px) {
+  .states .card {
+    width: 746px;
+  }
+  .states .card img {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+  }
 }

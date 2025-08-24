@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Material Icons CDN -->
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
+    />
+    <!-- bootstrap icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
     <title>地點搜尋</title>
   </head>
@@ -15,9 +25,9 @@
     <%- include('./layout/header'); -%>
 
     <main>
-      <div class="container mt-lg-20 mt-10">
+      <div class="container">
         <!-- breadcrumb -->
-        <div class="d-none d-lg-block">
+        <div class="d-none d-lg-block mt-lg-20 pt-lg-20">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-lg-10">
               <li class="breadcrumb-item text-primary-100">
@@ -38,7 +48,9 @@
       <div>
         <!-- 地點簡述 -->
         <div class="container">
-          <h1 class="fw-bold mb-2 fs-lg-h1 fs-h3">大阪</h1>
+          <h1 class="fw-bold mb-2 fs-lg-h1 fs-h3 mt-20 pt-10 mt-lg-0 pt-lg-0">
+            大阪
+          </h1>
           <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-6">
             大阪，一座融合傳統與現代的城市，擁有豐富的歷史文化、熱鬧的購物街區與世界知名的美食天堂。從氣派的大阪城到霓虹閃爍的道頓堀，每一處都充滿驚喜。無論是第一次造訪，還是再次回味，大阪總能用它的熱情與魅力，讓你留下難忘回憶。
           </p>
@@ -97,10 +109,341 @@
           />
         </div>
       </div>
+      <!-- 想怎麼玩？ -->
+      <div class="container my-lg-20 my-10">
+        <h2 class="text-primary-100 fw-bold fs-lg-h1 fs-h3 mb-lg-10 mb-5">
+          想怎麼玩大阪？熱門分類快速選
+        </h2>
+        <div class="row g-lg-6 g-4">
+          <div class="col-lg-3 col-6">
+            <div class="card rounded-4 overflow-hidden card-shadow">
+              <div class="card-top-img bg-primary-10 text-center">
+                <img
+                  src="../assets/images/location/category-1.svg"
+                  alt="交通優惠"
+                />
+              </div>
+              <div class="card-body p-lg-6">
+                <h3 class="card-title fw-bold fs-lg-h6 fs-body1">交通優惠</h3>
+                <p class="card-text fs-lg-body1 fs-body2">20+種選擇</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <div class="card rounded-4 overflow-hidden card-shadow">
+              <div class="card-top-img bg-primary-10 text-center">
+                <img
+                  src="../assets/images/location/category-2.svg"
+                  alt="一日遊"
+                />
+              </div>
+              <div class="card-body p-lg-6">
+                <h3 class="card-title fw-bold fs-lg-h6 fs-body1">一日遊</h3>
+                <p class="card-text fs-lg-body1 fs-body2">50+種選擇</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <div class="card rounded-4 overflow-hidden card-shadow">
+              <div class="card-top-img bg-primary-10 text-center">
+                <img
+                  src="../assets/images/location/category-3.svg"
+                  alt="景點門票"
+                />
+              </div>
+              <div class="card-body p-lg-6">
+                <h3 class="card-title fw-bold fs-lg-h6 fs-body1">景點門票</h3>
+                <p class="card-text fs-lg-body1 fs-body2">70+種選擇</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <div class="card rounded-4 overflow-hidden card-shadow">
+              <div class="card-top-img bg-primary-10 text-center">
+                <img
+                  src="../assets/images/location/category-4.svg"
+                  alt="美食餐廳"
+                />
+              </div>
+              <div class="card-body p-lg-6">
+                <h3 class="card-title fw-bold fs-lg-h6 fs-body1">美食餐廳</h3>
+                <p class="card-text fs-lg-body1 fs-body2">80+種選擇</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 大阪 TOP 10 -->
+      <div class="container mt-lg-20 mt-10">
+        <h2 class="text-primary-100 fw-bold fs-lg-h1 fs-h3 mb-lg-10 mb-5">
+          大阪 TOP 10!
+        </h2>
+      </div>
+      <!-- Swiper -->
+      <%- include('./layout/items'); -%>
+
+      <!-- 來自 ZOBAA 的大阪推薦 -->
+      <div class="container mt-lg-20 mt-10">
+        <h2 class="text-primary-100 fw-bold fs-lg-h1 fs-h3 mb-lg-10 mb-5">
+          來自 ZOBAA 的大阪推薦
+        </h2>
+        <ul class="nav nav-tabs mb-lg-10" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <!-- role="presentation" 輔助工具 -->
+            <button
+              class="nav-link fw-semibold text-primary-100 active"
+              id="tour-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tour"
+              type="button"
+              role="tab"
+            >
+              觀光行程
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="ticket-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#ticket"
+              type="button"
+              role="tab"
+            >
+              景點門票
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="transport-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#transport"
+              type="button"
+              role="tab"
+            >
+              交通優惠
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="food-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#food"
+              type="button"
+              role="tab"
+            >
+              美食餐廳
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="promo-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#promo"
+              type="button"
+              role="tab"
+            >
+              本月優惠
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- Swiper -->
+      <%- include('./layout/items'); -%>
+
+      <!-- 旅人攻略 -->
+      <div class="bg-primary-10 py-lg-30 py-10">
+        <div class="container">
+          <!-- 標題 -->
+          <div
+            class="d-lg-flex justify-content-lg-between align-items-lg-center mb-lg-20 mb-5"
+          >
+            <h2 class="fw-bold text-primary-100 fs-lg-h1 fs-h3 mb-2">
+              旅人攻略 <br />看看大家怎麼玩！
+            </h2>
+            <p class="fw-bold text-primary-100 fs-lg-h6 fs-body1 mb-2">
+              這裡不只是遊記，更是來自旅人親身經歷的風格指南與靈感筆記。<br />跟著他們的腳步走，找到屬於你的旅行意義。
+            </p>
+          </div>
+          <!-- 攻略卡片 -->
+          <div class="bg-light rounded-4 d-lg-flex p-lg-8 p-4 gap-lg-8 mb-6">
+            <div>
+              <img
+                src="../assets/images/location/guide-1.png"
+                alt="空堀商店街的散步節奏"
+                class="rounded-4 mb-4 mb-lg-0"
+              />
+            </div>
+            <div>
+              <div>
+                <!-- 標籤 -->
+                <div class="mb-6">
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">#大阪</p>
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">
+                    #老街巡禮
+                  </p>
+                </div>
+                <!-- 文章標題內容 -->
+                <div>
+                  <h3 class="fw-bold fs-lg-h2 fs-h4 mb-2">
+                    空堀商店街的散步節奏
+                  </h3>
+                  <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-10">
+                    離開熱鬧難波，走進空堀這座時間凍結的老街，每家店都像一段回憶：木造喫茶、手工小物、安靜的巷弄轉角。這裡沒有觀光氣氛，只有城市最真實的日常樣貌...
+                  </p>
+                </div>
+                <div class="text-lg-end">
+                  <a href="#" class="fw-bold text-primary-100 fs-lg-body1"
+                    >查看文章<span
+                      class="material-symbols-outlined align-bottom ms-lg-2"
+                    >
+                      arrow_forward
+                    </span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-light rounded-4 d-lg-flex p-lg-8 p-4 gap-lg-8 mb-6">
+            <div>
+              <img
+                src="../assets/images/location/guide-2.png"
+                alt="深夜的章魚燒與便利商店啤酒"
+                class="rounded-4 mb-4 mb-lg-0"
+              />
+            </div>
+            <div>
+              <div>
+                <!-- 標籤 -->
+                <div class="mb-6">
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">#大阪</p>
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">
+                    #庶民美食
+                  </p>
+                </div>
+                <!-- 文章標題內容 -->
+                <div>
+                  <h3 class="fw-bold fs-lg-h2 fs-h4 mb-2">
+                    深夜的章魚燒與便利商店啤酒
+                  </h3>
+                  <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-10">
+                    難波站邊的小巷，有開到凌晨的章魚燒老店。坐在路邊配一罐便利商店啤酒，看路人談天、喝醉、笑鬧，這種庶民感才是我最懷念的大阪味道。
+                  </p>
+                </div>
+                <div class="text-lg-end">
+                  <a href="#" class="fw-bold text-primary-100 fs-lg-body1"
+                    >查看文章<span
+                      class="material-symbols-outlined align-bottom ms-lg-2"
+                    >
+                      arrow_forward
+                    </span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-light rounded-4 d-lg-flex p-lg-8 p-4 gap-lg-8 mb-6">
+            <div>
+              <img
+                src="../assets/images/location/guide-3.png"
+                alt="一個人在中之島圖書館待一整天"
+                class="rounded-4 mb-4 mb-lg-0"
+              />
+            </div>
+            <div>
+              <div>
+                <!-- 標籤 -->
+                <div class="mb-6">
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">#大阪</p>
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">
+                    #靜態旅行
+                  </p>
+                </div>
+                <!-- 文章標題內容 -->
+                <div>
+                  <h3 class="fw-bold fs-lg-h2 fs-h4 mb-2">
+                    一個人在中之島圖書館待一整天
+                  </h3>
+                  <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-10">
+                    陰天的中之島很安靜，我選擇在百年圖書館裡消磨一整天。閱讀、打盹、寫明信片，從高聳書架與拱形窗邊找到片刻的呼吸空間。不趕行程的日子，才最像我想要的旅途。
+                  </p>
+                </div>
+                <div class="text-lg-end">
+                  <a href="#" class="fw-bold text-primary-100 fs-lg-body1"
+                    >查看文章<span
+                      class="material-symbols-outlined align-bottom ms-lg-2"
+                    >
+                      arrow_forward
+                    </span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-light rounded-4 d-lg-flex p-lg-8 p-4 gap-lg-8 mb-6">
+            <div>
+              <img
+                src="../assets/images/location/guide-4.png"
+                alt="跟著在地人玩「新世界」"
+                class="rounded-4 mb-4 mb-lg-0"
+              />
+            </div>
+            <div>
+              <div>
+                <!-- 標籤 -->
+                <div class="mb-6">
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">#大阪</p>
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">
+                    #在地文化
+                  </p>
+                </div>
+                <!-- 文章標題內容 -->
+                <div>
+                  <h3 class="fw-bold fs-lg-h2 fs-h4 mb-2">
+                    跟著在地人玩「新世界」
+                  </h3>
+                  <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-10">
+                    走進「新世界」，才發現大阪有多狂、有多生活。串炸店裡全是吆喝聲、立吞店排滿上班族，還有拍不完的霓虹與搞笑招牌。這一區又亂又熱鬧，但真實又迷人。
+                  </p>
+                </div>
+                <div class="text-lg-end">
+                  <a href="#" class="fw-bold text-primary-100 fs-lg-body1"
+                    >查看文章<span
+                      class="material-symbols-outlined align-bottom ms-lg-2"
+                    >
+                      arrow_forward
+                    </span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        breakpoints: {
+          768: { slidesPerView: 4, spaceBetween: 24 },
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: true,
+        loop: true,
+      });
+    </script>
   </body>
 </html>

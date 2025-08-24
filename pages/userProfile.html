@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Material Icons CDN -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <!-- bootstrap icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <title>個人資料頁</title>
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+
+    <main>
+      <div class="userprofile">
+        <div class="container">
+          <div class="mb-lg-30 mb-10">
+            <div>
+              <img
+                src="../assets/images/userprofile/hero.png"
+                alt="封面圖片"
+                class="cover-img rounded-4 img-fluid"
+              />
+            </div>
+            <div
+              class="d-flex flex-column justify-content-center align-items-center"
+            >
+              <div>
+                <img
+                  src="../assets/images/userprofile/avatar-1.png"
+                  alt="Jessica Yen頭貼"
+                  class="profile-img"
+                />
+              </div>
+              <div class="text-center">
+                <h1 class="fw-bold text-primary-100 fs-lg-h5 fs-h6">
+                  Jessica Yen
+                </h1>
+                <p class="text-neutral-80 fs-lg-body1 fs-body2">
+                  jessica.yen@gmail.com
+                </p>
+              </div>
+            </div>
+            <div class="profile-nav shadow rounded-4">
+              <ul
+                class="nav nav-pills nav-fill mt-lg-20 mb-lg-6 mt-10 mb-4"
+                id="pills-tab"
+                role="tablist"
+              >
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-start text-dark bg-light fw-bold border-end rounded-0 py-0 px-6 active"
+                    id="pills-myAccount-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-myAccount"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-myAccount"
+                    aria-selected="true"
+                  >
+                    我的帳號
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-start text-dark bg-light fw-bold border-end rounded-0 py-0 px-6"
+                    id="pills-myOrder-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-myOrder"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-myOrder"
+                    aria-selected="false"
+                  >
+                    訂單管理
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-start text-dark bg-light fw-bold py-0 px-6"
+                    id="pills-myCollect-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-myCollect"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-myCollect"
+                    aria-selected="false"
+                  >
+                    我的收藏
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-content" id="pills-tabContent">
+              <!-- 我的帳號內容 -->
+              <div
+                class="tab-pane fade show active"
+                id="pills-myAccount"
+                role="tabpanel"
+                aria-labelledby="pills-myAccount-tab"
+              >
+                <div
+                  class="bg-light shadow rounded-4 px-lg-8 px-4 pb-lg-8 pb-4 pt-lg-16 pt-8"
+                >
+                  <h2 class="fw-bold fs-lg-h1 fs-h3 mb-10">我的帳號</h2>
+                  <ul
+                    class="nav nav-tabs mb-lg-10 mb-6"
+                    id="myTab"
+                    role="tablist"
+                  >
+                    <li class="nav-item" role="presentation">
+                      <!-- role="presentation" 輔助工具 -->
+                      <button
+                        class="nav-link fw-semibold text-primary-100 active"
+                        id="user-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#user"
+                        type="button"
+                        role="tab"
+                      >
+                        個人資訊
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link"
+                        id="Common-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#Common"
+                        type="button"
+                        role="tab"
+                      >
+                        常用旅客
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="user"
+                      role="tabpanel"
+                      aria-labelledby="user-tab"
+                    >
+                      <!-- 個人資料 -->
+                      <!-- 姓名 -->
+                      <div class="form-floating mb-6">
+                        <input
+                          type="text"
+                          class="form-control-plaintext border-0 fw-bold fs-lg-h6"
+                          id="floatingName"
+                          placeholder="name"
+                          value="Jessica Yen"
+                          readonly
+                          tabindex="-1"
+                        />
+                        <label for="floatingName" class="fs-lg-h6 pb-2"
+                          >姓名</label
+                        >
+                      </div>
+                      <!-- 信箱 -->
+                      <div class="form-floating mb-6">
+                        <input
+                          type="email"
+                          class="form-control-plaintext border-0 fw-bold fs-lg-h6"
+                          id="floatingEmail"
+                          placeholder="name@example.com"
+                          value="jessica.yen@gmail.com"
+                          readonly
+                          tabindex="-1"
+                        />
+                        <label for="floatingEmail" class="fs-lg-h6 pb-2"
+                          >電子信箱</label
+                        >
+                      </div>
+                      <!-- 密碼 -->
+                      <div class="form-floating mb-6">
+                        <input
+                          type="password"
+                          class="form-control-plaintext border-0 fw-bold fs-lg-h6"
+                          id="floatingPassword"
+                          placeholder="Password"
+                          value="1234567890"
+                          readonly
+                          tabindex="-1"
+                        />
+                        <label for="floatingPassword" class="fs-lg-h6 pb-2"
+                          >密碼</label
+                        >
+                      </div>
+                      <!-- 電話 -->
+                      <div class="form-floating mb-6">
+                        <input
+                          type="tel"
+                          class="form-control-plaintext border-0 fw-bold fs-lg-h6"
+                          id="floatingTel"
+                          placeholder="Tel"
+                          value="+886 912-345-678"
+                          readonly
+                          tabindex="-1"
+                        />
+                        <label for="floatingTel" class="fs-lg-h6 pb-2"
+                          >聯絡電話</label
+                        >
+                      </div>
+                      <!-- 地址 -->
+                      <div class="form-floating mb-6">
+                        <input
+                          type="text"
+                          class="form-control-plaintext border-0 fw-bold fs-lg-h6"
+                          id="floatingAddress"
+                          placeholder="address"
+                          value="台北市士林區幸福路193號5樓之1"
+                          readonly
+                          tabindex="-1"
+                        />
+                        <label for="floatingAddress" class="fs-lg-h6 pb-2"
+                          >地址</label
+                        >
+                      </div>
+                      <!-- 生日 -->
+                      <div class="form-floating mb-10">
+                        <input
+                          type="date"
+                          class="form-control-plaintext border-0 fw-bold fs-lg-h6"
+                          id="floatingBirthday"
+                          placeholder="Birthday"
+                          value="1995-09-20"
+                          readonly
+                          tabindex="-1"
+                        />
+                        <label for="floatingBirthday" class="fs-lg-h6 pb-2"
+                          >生日</label
+                        >
+                      </div>
+                      <!-- 桌機板 編輯按鈕 -->
+                      <div class="text-end d-none d-lg-block">
+                        <a
+                          href="#"
+                          class="btn border-primary-100 fw-semibold text-primary-100 fs-body1"
+                          ><span class="material-symbols-outlined align-bottom"
+                            >edit</span
+                          >編輯資訊</a
+                        >
+                      </div>
+                      <!-- 行動版 編輯按鈕 -->
+                      <div class="text-end d-block d-lg-none">
+                        <a
+                          href="#"
+                          class="btn border-primary-100 fw-semibold text-primary-100 fs-body1 w-100"
+                          ><span class="material-symbols-outlined align-bottom"
+                            >edit</span
+                          >編輯資訊</a
+                        >
+                      </div>
+                    </div>
+                    <!-- 常用旅客 -->
+                    <div
+                      class="tab-pane fade"
+                      id="Common"
+                      role="tabpanel"
+                      aria-labelledby="Common-tab"
+                    >
+                      <div>
+                        <!-- Jessica Yen -->
+                        <div
+                          class="profile-card d-lg-flex flex-column border rounded-4 p-lg-6 p-4 mb-lg-3 mb-6"
+                        >
+                          <div class="d-flex align-items-center mb-4 mb-lg-0">
+                            <!-- 頭貼 -->
+                            <div>
+                              <img
+                                src="../assets/images/userprofile/avatar-1.png"
+                                alt="Jessica Yen頭貼"
+                                style="max-width: 40px"
+                                class="profile-img-sm me-2"
+                              />
+                            </div>
+                            <!-- 姓名 -->
+                            <div>
+                              <p class="fw-bold fs-lg-h6">Jessica Yen</p>
+                            </div>
+                          </div>
+                          <!-- 編輯&刪除按鈕 -->
+                          <div class="d-lg-none">
+                            <a
+                              href="#"
+                              class="btn border-primary-100 fw-semibold text-primary-100 fs-body1 me-2"
+                              ><span
+                                class="material-symbols-outlined align-bottom"
+                                >edit</span
+                              >編輯資訊</a
+                            >
+                            <a
+                              href="#"
+                              class="btn border-primary-100 fw-semibold text-primary-100 fs-body1"
+                              ><span
+                                class="material-symbols-outlined align-bottom"
+                                >close</span
+                              >刪除</a
+                            >
+                          </div>
+                        </div>
+                        <!-- Jenny Lin -->
+                        <div
+                          class="profile-card position-relative d-flex flex-column border rounded-4 p-lg-6 p-4 mb-10 mb-lg-0"
+                        >
+                          <div class="d-flex align-items-center mb-4 mb-lg-0">
+                            <!-- 頭貼 -->
+                            <div class="d-flex align-items-center">
+                              <img
+                                src="../assets/images/userprofile/avatar-2.jpg"
+                                alt="Jenny Lin頭貼"
+                                class="profile-img-sm me-2 rounded-circle"
+                              />
+                            </div>
+                            <!-- 姓名 -->
+                            <div>
+                              <p class="fw-bold fs-lg-h6 mb-0">Jenny Lin</p>
+                            </div>
+                          </div>
+                          <!-- 編輯&刪除按鈕 -->
+                          <div class="d-lg-none">
+                            <a
+                              href="#"
+                              class="btn border-primary-100 fw-semibold text-primary-100 fs-body1 me-2"
+                              ><span
+                                class="material-symbols-outlined align-bottom"
+                                >edit</span
+                              >編輯資訊</a
+                            >
+                            <a
+                              href="#"
+                              class="btn border-primary-100 fw-semibold text-primary-100 fs-body1"
+                              ><span
+                                class="material-symbols-outlined align-bottom"
+                                >close</span
+                              >刪除</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 桌機板 新增常用旅客按鈕 -->
+                      <div class="text-end mt-lg-10 d-none d-lg-block">
+                        <a
+                          href="#"
+                          class="btn border-primary-100 fw-semibold text-primary-100 fs-lg-body1"
+                          ><span class="material-symbols-outlined align-bottom"
+                            >add</span
+                          >新增常用旅客</a
+                        >
+                      </div>
+                      <!-- 行動板 新增常用旅客按鈕 -->
+                      <div class="text-end mt-lg-10 d-block d-lg-none">
+                        <a
+                          href="#"
+                          class="btn border-primary-100 fw-semibold text-primary-100 fs-lg-body1 w-100"
+                          ><span class="material-symbols-outlined align-bottom"
+                            >add</span
+                          >新增常用旅客</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-myOrder"
+                role="tabpanel"
+                aria-labelledby="pills-myOrder-tab"
+              >
+                456
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-myCollect"
+                role="tabpanel"
+                aria-labelledby="pills-myCollect-tab"
+              >
+                789
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.js"></script>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

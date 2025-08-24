@@ -1,0 +1,53 @@
+.card-shadow:hover {
+  box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.1);
+}
+.card-tag {
+  background-color: $primary-10;
+  color: $primary-100;
+  display: inline;
+  padding: 4px 8px;
+}
+.bi-star-fill {
+  color: #f6bd2b;
+}
+.bi-heart {
+  padding: 16px;
+  background-color: rgba(0, 4, 0, 0.4);
+  border-bottom-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.swiper-slide {
+  width: auto; // 讓 Swiper 自己計算
+  flex-shrink: 0; // 防止被壓縮
+  height: auto;
+  max-width: 306px;
+  margin-right: 24px;
+  // align-self: stretch;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+/* 去掉 Bootstrap 原本的 Tab 邊框 */
+.nav-tabs .nav-link {
+  border: none;
+  color: $neutral-80;
+  padding: 10px 20px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* active 顯示底線 */
+.nav-tabs .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 32px; /* 內縮距離，可調整 */
+  right: 32px;
+  height: 3px; /* 底線高度 */
+  background-color: $primary-100; /* 底線顏色 */
+  border-radius: 2px;
+}

@@ -1,0 +1,49 @@
+.userprofile {
+  padding-top: 106px;
+}
+@media (min-width: 992px) {
+  .userprofile {
+    background-image: url(../assets/images/userprofile/bg-line.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 196px;
+  }
+}
+.profile-img {
+  width: 160px;
+  height: 160px;
+  margin-top: -80px;
+  border-radius: 50%;
+  border: 4px solid $primary-100;
+}
+
+/* 平板：768px ~ 991px */
+@media (max-width: 991px) {
+  .profile-img {
+    width: 140px;
+    height: 140px;
+    margin-top: -70px;
+  }
+}
+
+/* 手機：< 768px */
+@media (max-width: 767px) {
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+  }
+}
+
+.profile-nav .nav-pills .nav-item {
+  padding: 28px 0px;
+}
+
+.profile-img-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid $primary-100;
+  object-fit: cover;
+}

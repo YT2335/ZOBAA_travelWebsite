@@ -1,0 +1,88 @@
+.hot-tag {
+  padding: 4px 8px;
+  background-color: $neutral-40;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.hot-card,
+.calendar {
+  // 行動版 (預設)
+  border-radius: 0 0 1rem 1rem;
+  margin-bottom: 0;
+  border-bottom: none;
+
+  // 桌機以上
+  @media (min-width: 992px) {
+    border-radius: 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 24px; // 內縮 24px
+      right: 24px; // 內縮 24px
+      bottom: 0;
+      height: 1px;
+      border-bottom: 1px solid $neutral-40;
+    }
+  }
+}
+.title {
+  min-width: 120px; // 左側固定寬度
+  //   flex-shrink: 0; // 不會縮小
+}
+.air-datepicker {
+  font-size: 16px;
+  width: 319px; /* 調整日曆寬度 */
+  height: 440px;
+}
+@media (min-width: 992px) {
+  .air-datepicker {
+    width: 584px;
+  }
+}
+// .air-datepicker-cell {
+//   padding: 8px 12px 16px 12px; /* 日期格子內距，改變格子大小 */
+//   width: 44px; /* 固定格子寬度 */
+//   height: 44px; /* 固定格子高度 */
+// }
+.air-datepicker-nav--title {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  order: -1;
+  margin-right: auto;
+}
+.comment.bi-star-fill {
+  color: $primary-60;
+  margin-left: 4px;
+}
+.list-group-item.active {
+  color: $primary-100;
+  font-weight: bold;
+  &::before {
+    content: "";
+    margin-right: 16px;
+    border-left: 4px solid #4a3830;
+  }
+}
+.readmore img {
+  height: 605px;
+}
+.readmore .btn {
+  padding: 16px 100px;
+}
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 256px; /* 控制漸層高度 */
+  background: linear-gradient(to top, rgba(250, 251, 252, 1), transparent);
+}

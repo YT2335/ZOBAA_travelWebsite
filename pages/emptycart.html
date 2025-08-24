@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Material Icons CDN -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <!-- bootstrap icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <title>空的購物車</title>
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+
+    <main>
+      <section class="cart bg-neutral-15">
+        <div class="container py-20">
+          <div class="text-center">
+            <img
+              src="../assets/images/cart/empty.svg"
+              alt="購物車還沒有商品，立即逛逛！"
+              class="mb-lg-6"
+            />
+          </div>
+          <div>
+            <p class="fw-semibold text-neutral-80 fs-body1 mb-6 text-center">
+              購物車還沒有商品，立即逛逛！
+            </p>
+            <button
+              type="button"
+              class="btn btn-primary-100 fs-body1 fw-semibold mx-auto d-block px-20 rounded-4"
+            >
+              看看其他行程
+            </button>
+          </div>
+        </div>
+        <!-- 其他旅人也買了 -->
+        <div class="container">
+          <h3 class="fw-bold fs-h3 text-primary-100 mb-lg-6 mb-10">
+            <span
+              class="material-symbols-outlined fw-bold text-primary-100 me-2"
+            >
+              tag </span
+            >其他旅人也買了
+          </h3>
+        </div>
+        <%- include('./layout/items'); -%>
+      </section>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        breakpoints: {
+          768: { slidesPerView: 4, spaceBetween: 24 },
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: true,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>

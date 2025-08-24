@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Material Icons CDN -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <!-- bootstrap icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <title>購物車</title>
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+
+    <main>
+      <section class="cart bg-neutral-15">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8">
+              <!-- 全選卡片 -->
+              <div class="card mb-lg-10 border-0 shadow">
+                <div
+                  class="d-flex justify-content-between align-items-center bg-light rounded-4 py-lg-4 px-lg-6"
+                >
+                  <div class="d-flex align-items-center gap-2">
+                    <input type="checkbox" id="select-all" />
+                    <label for="select-all" class="fw-bold text-primary-100"
+                      >全選</label
+                    >
+                  </div>
+                  <button class="btn border-primary-100 rounded-4">
+                    刪除選中活動
+                  </button>
+                </div>
+              </div>
+              <!-- 商品卡片 1 -->
+              <div class="card d-flex flex-row align-items-center gap-3 p-3">
+                <input type="checkbox" id="item1" />
+                <img
+                  src="../assets/images/cart/cart-1.png"
+                  alt="商品1"
+                  class="img-fluid rounded"
+                />
+                <div class="flex-grow-1">
+                  <p class="mb-1 fw-bold">海闊天空展望台門票 HARUKAS 300</p>
+                  <p class="mb-0 text-muted">
+                    阿倍野展望台門票 HARUKAS 300｜附章魚燒兌換劵
+                  </p>
+                  <p>兌換期內皆適用</p>
+                </div>
+                <span class="fw-bold">$100</span>
+              </div>
+            </div>
+            <!-- 費用明細 -->
+            <div class="col-lg-4">
+              <div class="card p-lg-6 rounded-4 border-0 shadow">
+                <div class="border-bottom border-neutral-40 mb-lg-8">
+                  <h3 class="fw-semibold fs-lg-h5 mb-lg-8">費用明細</h3>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-lg-3"
+                  >
+                    <p class="fs-lg-body1 text-neutral-80">商品小計</p>
+                    <p class="fw-bold fs-lg-body1 text-neutral-80">NT$ 3600</p>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-lg-8"
+                  >
+                    <p class="fs-lg-body1 text-neutral-80">優惠折抵</p>
+                    <p class="fw-bold fs-lg-body1 text-primary-60">- 100</p>
+                  </div>
+                </div>
+                <!-- card body -->
+                <div>
+                  <div class="d-flex justify-content-between mb-lg-8">
+                    <p class="fs-lg-body1 text-neutral-80 align-self-end">
+                      總計
+                    </p>
+                    <p class="fw-bold fs-lg-h3">NT$ 3,500</p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary-100 w-100 fw-semibold rounded-4"
+                  >
+                    前往結賬
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.js"></script>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>
