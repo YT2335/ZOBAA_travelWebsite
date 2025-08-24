@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Material Icons CDN -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <!-- bootstrap icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <title>地點搜尋</title>
+    <script type="module" crossorigin src="/ZOBAA_travelWebsite/assets/main-DylPdR9-.js"></script>
+    <link rel="stylesheet" crossorigin href="/ZOBAA_travelWebsite/assets/main-Dv0IicXF.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-light py-3 py-lg-4 bg-light fixed-top">
+  <div class="container position-relative">
+    <div class="d-flex align-items-center me-auto">
+      <a
+        href="index"
+        class="navbar-brand p-0 me-6 fw-bold fs-h5 text-primary-100"
+        ># ZOBAA<span class="fst-italic">!</span></a
+      >
+      <!-- 桌機板--搜尋框 -->
+      <form class="position-relative d-none d-lg-block">
+        <span
+          class="material-symbols-outlined align-bottom text-neutral-60 position-absolute top-50 start-0 translate-middle-y ps-4"
+        >
+          search
+        </span>
+        <input
+          type="search"
+          class="form-control rounded-1 py-2 ps-10 navbar-lg-search"
+          id="navbar-lg-search"
+          placeholder="搜尋景點、地點或城市"
+        />
+      </form>
+    </div>
+    <div class="position-absolute start-0 end-0 px-4 z-1 bg-light">
+      <div class="collapse" id="collapseExample">
+        <div class="d-flex align-items-center">
+          <form class="position-relative w-100">
+            <span
+              class="material-symbols-outlined align-bottom text-neutral-60 position-absolute top-50 start-0 translate-middle-y ps-4"
+            >
+              search
+            </span>
+            <input
+              type="search"
+              class="form-control rounded-1 py-2 ps-10"
+              id="navbar-md-search"
+              placeholder="搜尋景點、地點或城市"
+            />
+          </form>
+          <button
+            type="button"
+            class="p-2 border-0 bg-light"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+          >
+            <span class="material-symbols-outlined align-bottom"> close </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- 行動版--搜尋圖示 -->
+    <button
+      type="button"
+      class="bg-light border-0 p-2 d-lg-none"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseExample"
+    >
+      <span class="material-symbols-outlined align-bottom text-neutral-80">
+        search
+      </span>
+    </button>
+    <!-- 購物車圖示 -->
+    <a href="#" class="border-0 my-2">
+      <span class="position-relative">
+        <span
+          class="position-absolute bottom-50 end-0 translate-middle badge rounded-circle bg-danger-100 cart-tag p-0"
+        >
+          2
+        </span>
+        <span
+          class="material-symbols-outlined align-bottom text-primary-100 py-2 px-3"
+        >
+          shopping_cart
+        </span>
+      </span>
+    </a>
+    <!-- 登入樣式 -->
+    <a href="userProfile" class="d-lg-flex align-items-center ms-4 d-none">
+      <img
+        src="/ZOBAA_travelWebsite/assets/avatar-1-cp2HwrEX.png"
+        alt="Jessica頭貼"
+        class="profile-img-sm border-0 me-2"
+      />
+      <p class="fw-bold fs-body1 text-primary-100">Jessica</p>
+    </a>
+    <!-- 漢堡選單 -->
+    <button
+      class="border-0 bg-light p-2 d-lg-none"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+    >
+      <span class="material-symbols-outlined align-bottom"> menu </span>
+    </button>
+    <!-- 側邊滑出內容 -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body px-6 pb-6 pt-4 d-flex flex-column">
+        <div>
+          <div
+            class="d-flex align-items-center pb-4 border-bottom border-neutral-40"
+          >
+            <div>
+              <img
+                src="/ZOBAA_travelWebsite/assets/avatar-1-cp2HwrEX.png"
+                alt="Jessica頭貼"
+                class="profile-img-sm border-0 me-2"
+              />
+            </div>
+            <div>
+              <p class="fw-bold fs-body1">Jessica</p>
+              <p class="fs-body1">jessica.yen@gamil.com</p>
+            </div>
+          </div>
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mt-4">
+            <li class="nav-item">
+              <a
+                class="nav-link py-3 text-neutral-80 active"
+                aria-current="page"
+                href="#"
+                ><span class="material-symbols-outlined align-bottom me-2">
+                  article </span
+                >訂單管理</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-3 text-neutral-80" href="#"
+                ><span class="material-symbols-outlined align-bottom me-2">
+                  favorite </span
+                >我的收藏</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-3 text-neutral-80" href="#"
+                ><span class="material-symbols-outlined align-bottom me-2">
+                  settings </span
+                >帳號設定</a
+              >
+            </li>
+          </ul>
+        </div>
+        <button
+          type="button"
+          class="btn text-start fs-body1 text-neutral-80 py-3 px-0 mt-auto border-0"
+        >
+          <span class="material-symbols-outlined align-bottom me-2 ms-1">
+            logout </span
+          >登出
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    <main>
+      <div class="container">
+        <!-- breadcrumb -->
+        <div class="d-none d-lg-block mt-lg-20 pt-lg-20">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-lg-10">
+              <li class="breadcrumb-item text-primary-100">
+                <a href="#">首頁</a>
+              </li>
+              <li class="breadcrumb-item text-primary-100">
+                <a href="#">日本</a>
+              </li>
+              <li class="breadcrumb-item text-primary-100">
+                <a href="#">關西</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">大阪</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- 景點資訊 -->
+      <div>
+        <!-- 地點簡述 -->
+        <div class="container">
+          <h1 class="fw-bold mb-2 fs-lg-h1 fs-h3 mt-20 pt-10 mt-lg-0 pt-lg-0">
+            大阪
+          </h1>
+          <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-6">
+            大阪，一座融合傳統與現代的城市，擁有豐富的歷史文化、熱鬧的購物街區與世界知名的美食天堂。從氣派的大阪城到霓虹閃爍的道頓堀，每一處都充滿驚喜。無論是第一次造訪，還是再次回味，大阪總能用它的熱情與魅力，讓你留下難忘回憶。
+          </p>
+        </div>
+        <!-- 地點圖片 -->
+        <div class="container p-0 mb-lg-20 d-none d-xxl-block">
+          <div class="d-flex flex-wrap gap-2">
+            <!-- 左邊大圖 -->
+            <div style="flex: 0 0 720px">
+              <img
+                src="/ZOBAA_travelWebsite/assets/osaka-1-Bw3FKaVU.png"
+                alt="osaka-1"
+                class="img-fluid rounded-start-4"
+              />
+            </div>
+
+            <!-- 右邊四張小圖 -->
+            <div class="d-flex flex-wrap gap-2" style="flex: 0 0 568px">
+              <img
+                src="/ZOBAA_travelWebsite/assets/osaka-2-CtHaeKfc.png"
+                alt="osaka-2"
+                style="width: 280px; height: auto"
+              />
+              <img
+                src="/ZOBAA_travelWebsite/assets/osaka-3-pt68zYMA.png"
+                alt="osaka-3"
+                style="
+                  width: 280px;
+                  height: auto;
+                  border-top-right-radius: 16px;
+                "
+              />
+              <img
+                src="/ZOBAA_travelWebsite/assets/osaka-4-BqiQxOYh.png"
+                alt="osaka-4"
+                style="width: 280px; height: auto"
+              />
+              <img
+                src="/ZOBAA_travelWebsite/assets/osaka-5-BS0LFxR5.png"
+                alt="osaka-5"
+                style="
+                  width: 280px;
+                  height: auto;
+                  border-bottom-right-radius: 16px;
+                "
+              />
+            </div>
+          </div>
+        </div>
+        <!-- 行動版--地點圖片 -->
+        <div class="container d-xxl-none d-block">
+          <img
+            src="/ZOBAA_travelWebsite/assets/osaka-1-Bw3FKaVU.png"
+            alt="osaka-1"
+            class="img-fluid rounded-4 mb-10"
+          />
+        </div>
+      </div>
+      <!-- 想怎麼玩？ -->
+      <div class="container my-lg-20 my-10">
+        <h2 class="text-primary-100 fw-bold fs-lg-h1 fs-h3 mb-lg-10 mb-5">
+          想怎麼玩大阪？熱門分類快速選
+        </h2>
+        <div class="row g-lg-6 g-4">
+          <div class="col-lg-3 col-6">
+            <div class="card rounded-4 overflow-hidden card-shadow">
+              <div class="card-top-img bg-primary-10 text-center">
+                <img
+                  src="/ZOBAA_travelWebsite/assets/category-1-CzpOAeAA.svg"
+                  alt="交通優惠"
+                />
+              </div>
+              <div class="card-body p-lg-6">
+                <h3 class="card-title fw-bold fs-lg-h6 fs-body1">交通優惠</h3>
+                <p class="card-text fs-lg-body1 fs-body2">20+種選擇</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <div class="card rounded-4 overflow-hidden card-shadow">
+              <div class="card-top-img bg-primary-10 text-center">
+                <img
+                  src="/ZOBAA_travelWebsite/assets/category-2-CFIYCbTe.svg"
+                  alt="一日遊"
+                />
+              </div>
+              <div class="card-body p-lg-6">
+                <h3 class="card-title fw-bold fs-lg-h6 fs-body1">一日遊</h3>
+                <p class="card-text fs-lg-body1 fs-body2">50+種選擇</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <div class="card rounded-4 overflow-hidden card-shadow">
+              <div class="card-top-img bg-primary-10 text-center">
+                <img
+                  src="/ZOBAA_travelWebsite/assets/category-3-Ij07Pi0R.svg"
+                  alt="景點門票"
+                />
+              </div>
+              <div class="card-body p-lg-6">
+                <h3 class="card-title fw-bold fs-lg-h6 fs-body1">景點門票</h3>
+                <p class="card-text fs-lg-body1 fs-body2">70+種選擇</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <div class="card rounded-4 overflow-hidden card-shadow">
+              <div class="card-top-img bg-primary-10 text-center">
+                <img
+                  src="/ZOBAA_travelWebsite/assets/category-4-Dlw65aG4.svg"
+                  alt="美食餐廳"
+                />
+              </div>
+              <div class="card-body p-lg-6">
+                <h3 class="card-title fw-bold fs-lg-h6 fs-body1">美食餐廳</h3>
+                <p class="card-text fs-lg-body1 fs-body2">80+種選擇</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 大阪 TOP 10 -->
+      <div class="container mt-lg-20 mt-10">
+        <h2 class="text-primary-100 fw-bold fs-lg-h1 fs-h3 mb-lg-10 mb-5">
+          大阪 TOP 10!
+        </h2>
+      </div>
+      <!-- Swiper -->
+      <!-- Swiper -->
+<div class="container px-lg-0 mb-lg-20">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-1-DLY_45Sw.png"
+          alt="環球影城"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          環球影城超值一日遊｜哈利波特園區＋快速通關體驗
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            即買即用
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.8<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(1029)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">1,000+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 5,480</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 6,200
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-2-DLkjmVc3.png"
+          alt="日式風情輕旅行"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          奈良梅花鹿餵食體驗＋和服散策｜日式風情輕旅行
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            中文導覽
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.7<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(880)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">900+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 2,250</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 2,800
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-3-Ba63bpk4.png"
+          alt="大阪經典小吃"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          黑門市場美食巡禮｜在地職人帶路吃遍大阪經典小吃
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            專業導覽
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.6<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(540)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">700+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 1,580</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 2,500
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-4-FDuWEWBq.png"
+          alt="大阪夜景直升機體驗"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          大阪夜景直升機體驗｜空中俯瞰梅田摩天輪＋海遊館
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            即買即用
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            7天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.7<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(319)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">600+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 6,890</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 8,890
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-1-DLY_45Sw.png"
+          alt="環球影城"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          環球影城超值一日遊｜哈利波特園區＋快速通關體驗
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            即買即用
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.8<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(1029)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">1,000+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 5,480</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 6,200
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-2-DLkjmVc3.png"
+          alt="日式風情輕旅行"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          奈良梅花鹿餵食體驗＋和服散策｜日式風情輕旅行
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            中文導覽
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.7<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(880)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">900+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 2,250</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 2,800
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-3-Ba63bpk4.png"
+          alt="大阪經典小吃"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          黑門市場美食巡禮｜在地職人帶路吃遍大阪經典小吃
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            專業導覽
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.6<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(540)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">700+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 1,580</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 2,500
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-4-FDuWEWBq.png"
+          alt="大阪夜景直升機體驗"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          大阪夜景直升機體驗｜空中俯瞰梅田摩天輪＋海遊館
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            即買即用
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            7天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.7<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(319)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">600+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 6,890</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 8,890
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+      <!-- 來自 ZOBAA 的大阪推薦 -->
+      <div class="container mt-lg-20 mt-10">
+        <h2 class="text-primary-100 fw-bold fs-lg-h1 fs-h3 mb-lg-10 mb-5">
+          來自 ZOBAA 的大阪推薦
+        </h2>
+        <ul class="nav nav-tabs mb-lg-10" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <!-- role="presentation" 輔助工具 -->
+            <button
+              class="nav-link fw-semibold text-primary-100 active"
+              id="tour-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tour"
+              type="button"
+              role="tab"
+            >
+              觀光行程
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="ticket-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#ticket"
+              type="button"
+              role="tab"
+            >
+              景點門票
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="transport-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#transport"
+              type="button"
+              role="tab"
+            >
+              交通優惠
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="food-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#food"
+              type="button"
+              role="tab"
+            >
+              美食餐廳
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="promo-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#promo"
+              type="button"
+              role="tab"
+            >
+              本月優惠
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- Swiper -->
+      <!-- Swiper -->
+<div class="container px-lg-0 mb-lg-20">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-1-DLY_45Sw.png"
+          alt="環球影城"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          環球影城超值一日遊｜哈利波特園區＋快速通關體驗
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            即買即用
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.8<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(1029)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">1,000+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 5,480</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 6,200
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-2-DLkjmVc3.png"
+          alt="日式風情輕旅行"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          奈良梅花鹿餵食體驗＋和服散策｜日式風情輕旅行
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            中文導覽
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.7<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(880)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">900+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 2,250</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 2,800
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-3-Ba63bpk4.png"
+          alt="大阪經典小吃"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          黑門市場美食巡禮｜在地職人帶路吃遍大阪經典小吃
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            專業導覽
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.6<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(540)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">700+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 1,580</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 2,500
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-4-FDuWEWBq.png"
+          alt="大阪夜景直升機體驗"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          大阪夜景直升機體驗｜空中俯瞰梅田摩天輪＋海遊館
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            即買即用
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            7天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.7<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(319)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">600+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 6,890</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 8,890
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-1-DLY_45Sw.png"
+          alt="環球影城"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          環球影城超值一日遊｜哈利波特園區＋快速通關體驗
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            即買即用
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.8<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(1029)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">1,000+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 5,480</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 6,200
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-2-DLkjmVc3.png"
+          alt="日式風情輕旅行"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          奈良梅花鹿餵食體驗＋和服散策｜日式風情輕旅行
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            中文導覽
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.7<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(880)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">900+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 2,250</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 2,800
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-3-Ba63bpk4.png"
+          alt="大阪經典小吃"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          黑門市場美食巡禮｜在地職人帶路吃遍大阪經典小吃
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            專業導覽
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            5 天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.6<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(540)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">700+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 1,580</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 2,500
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide rounded-4">
+        <img
+          src="/ZOBAA_travelWebsite/assets/top-4-FDuWEWBq.png"
+          alt="大阪夜景直升機體驗"
+          class="rounded-4 mb-4"
+        />
+        <h3 class="fw-bold fs-body1 mb-2">
+          大阪夜景直升機體驗｜空中俯瞰梅田摩天輪＋海遊館
+        </h3>
+        <div class="mb-2">
+          <p
+            class="d-inline bg-primary-10 text-primary-100 py-1 px-2 rounded me-2"
+          >
+            即買即用
+          </p>
+          <p class="d-inline bg-primary-10 text-primary-100 px-2 py-1 rounded">
+            7天前可免費取消
+          </p>
+        </div>
+        <div class="border-bottom pb-3 mb-1">
+          <p class="text-neutral-80 fs-body2 d-inline">
+            <i class="bi bi-star-fill me-1"></i>4.7<span
+              class="text-neutral-60 fs-body2 ms-1 border-end border-neutral-40 pe-3"
+              >(319)</span
+            >
+          </p>
+          <p class="text-neutral-80 fs-body2 ms-3 d-inline">600+ 個已訂購</p>
+        </div>
+        <!-- 售價 -->
+        <div class="mt-4">
+          <p class="fw-bold text-primary-100 fs-h6">NT$ 6,890</p>
+          <p
+            class="text-decoration-line-through fs-body2"
+            style="color: #808080"
+          >
+            NT$ 8,890
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+      <!-- 旅人攻略 -->
+      <div class="bg-primary-10 py-lg-30 py-10">
+        <div class="container">
+          <!-- 標題 -->
+          <div
+            class="d-lg-flex justify-content-lg-between align-items-lg-center mb-lg-20 mb-5"
+          >
+            <h2 class="fw-bold text-primary-100 fs-lg-h1 fs-h3 mb-2">
+              旅人攻略 <br />看看大家怎麼玩！
+            </h2>
+            <p class="fw-bold text-primary-100 fs-lg-h6 fs-body1 mb-2">
+              這裡不只是遊記，更是來自旅人親身經歷的風格指南與靈感筆記。<br />跟著他們的腳步走，找到屬於你的旅行意義。
+            </p>
+          </div>
+          <!-- 攻略卡片 -->
+          <div class="bg-light rounded-4 d-lg-flex p-lg-8 p-4 gap-lg-8 mb-6">
+            <div>
+              <img
+                src="/ZOBAA_travelWebsite/assets/guide-1-C96RgY2k.png"
+                alt="空堀商店街的散步節奏"
+                class="rounded-4 mb-4 mb-lg-0"
+              />
+            </div>
+            <div>
+              <div>
+                <!-- 標籤 -->
+                <div class="mb-6">
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">#大阪</p>
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">
+                    #老街巡禮
+                  </p>
+                </div>
+                <!-- 文章標題內容 -->
+                <div>
+                  <h3 class="fw-bold fs-lg-h2 fs-h4 mb-2">
+                    空堀商店街的散步節奏
+                  </h3>
+                  <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-10">
+                    離開熱鬧難波，走進空堀這座時間凍結的老街，每家店都像一段回憶：木造喫茶、手工小物、安靜的巷弄轉角。這裡沒有觀光氣氛，只有城市最真實的日常樣貌...
+                  </p>
+                </div>
+                <div class="text-lg-end">
+                  <a href="#" class="fw-bold text-primary-100 fs-lg-body1"
+                    >查看文章<span
+                      class="material-symbols-outlined align-bottom ms-lg-2"
+                    >
+                      arrow_forward
+                    </span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-light rounded-4 d-lg-flex p-lg-8 p-4 gap-lg-8 mb-6">
+            <div>
+              <img
+                src="/ZOBAA_travelWebsite/assets/guide-2-Cw_GkhC7.png"
+                alt="深夜的章魚燒與便利商店啤酒"
+                class="rounded-4 mb-4 mb-lg-0"
+              />
+            </div>
+            <div>
+              <div>
+                <!-- 標籤 -->
+                <div class="mb-6">
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">#大阪</p>
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">
+                    #庶民美食
+                  </p>
+                </div>
+                <!-- 文章標題內容 -->
+                <div>
+                  <h3 class="fw-bold fs-lg-h2 fs-h4 mb-2">
+                    深夜的章魚燒與便利商店啤酒
+                  </h3>
+                  <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-10">
+                    難波站邊的小巷，有開到凌晨的章魚燒老店。坐在路邊配一罐便利商店啤酒，看路人談天、喝醉、笑鬧，這種庶民感才是我最懷念的大阪味道。
+                  </p>
+                </div>
+                <div class="text-lg-end">
+                  <a href="#" class="fw-bold text-primary-100 fs-lg-body1"
+                    >查看文章<span
+                      class="material-symbols-outlined align-bottom ms-lg-2"
+                    >
+                      arrow_forward
+                    </span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-light rounded-4 d-lg-flex p-lg-8 p-4 gap-lg-8 mb-6">
+            <div>
+              <img
+                src="/ZOBAA_travelWebsite/assets/guide-3-DntSY7Dj.png"
+                alt="一個人在中之島圖書館待一整天"
+                class="rounded-4 mb-4 mb-lg-0"
+              />
+            </div>
+            <div>
+              <div>
+                <!-- 標籤 -->
+                <div class="mb-6">
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">#大阪</p>
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">
+                    #靜態旅行
+                  </p>
+                </div>
+                <!-- 文章標題內容 -->
+                <div>
+                  <h3 class="fw-bold fs-lg-h2 fs-h4 mb-2">
+                    一個人在中之島圖書館待一整天
+                  </h3>
+                  <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-10">
+                    陰天的中之島很安靜，我選擇在百年圖書館裡消磨一整天。閱讀、打盹、寫明信片，從高聳書架與拱形窗邊找到片刻的呼吸空間。不趕行程的日子，才最像我想要的旅途。
+                  </p>
+                </div>
+                <div class="text-lg-end">
+                  <a href="#" class="fw-bold text-primary-100 fs-lg-body1"
+                    >查看文章<span
+                      class="material-symbols-outlined align-bottom ms-lg-2"
+                    >
+                      arrow_forward
+                    </span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-light rounded-4 d-lg-flex p-lg-8 p-4 gap-lg-8 mb-6">
+            <div>
+              <img
+                src="/ZOBAA_travelWebsite/assets/guide-4-CgFR3kdL.png"
+                alt="跟著在地人玩「新世界」"
+                class="rounded-4 mb-4 mb-lg-0"
+              />
+            </div>
+            <div>
+              <div>
+                <!-- 標籤 -->
+                <div class="mb-6">
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">#大阪</p>
+                  <p class="card-tag fs-lg-body1 fs-body2 rounded-2">
+                    #在地文化
+                  </p>
+                </div>
+                <!-- 文章標題內容 -->
+                <div>
+                  <h3 class="fw-bold fs-lg-h2 fs-h4 mb-2">
+                    跟著在地人玩「新世界」
+                  </h3>
+                  <p class="text-neutral-80 fs-lg-body1 fs-body2 mb-10">
+                    走進「新世界」，才發現大阪有多狂、有多生活。串炸店裡全是吆喝聲、立吞店排滿上班族，還有拍不完的霓虹與搞笑招牌。這一區又亂又熱鬧，但真實又迷人。
+                  </p>
+                </div>
+                <div class="text-lg-end">
+                  <a href="#" class="fw-bold text-primary-100 fs-lg-body1"
+                    >查看文章<span
+                      class="material-symbols-outlined align-bottom ms-lg-2"
+                    >
+                      arrow_forward
+                    </span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-light py-custom">
+  <div
+    class="container d-lg-flex justify-content-lg-between align-items-lg-center"
+  >
+    <div>
+      <a href="index.html">
+        <img
+          src="data:image/png;base64,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"
+          alt="ZOBBA! LOGO"
+          class="mb-lg-8"
+        />
+      </a>
+      <div>
+        <ul class="list-unstyled d-lg-flex gap-lg-8 my-lg-0 my-10">
+          <li class="mb-4 mb-lg-0"><a href="#">常見問題</a></li>
+          <li class="mb-4 mb-lg-0"><a href="#">關於我們</a></li>
+          <li class="mb-4 mb-lg-0"><a href="#">隱私權政策</a></li>
+          <li class="mb-4 mb-lg-0"><a href="#">使用者條款</a></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="d-flex justify-content-lg-end gap-4 mb-4">
+        <a
+          href="#"
+          class="d-flex align-items-center justify-content-center rounded-circle border border-light"
+          style="width: 40px; height: 40px"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-line"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0M5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.15.15 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157m.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832l-.013-.015v-.001l-.01-.01-.003-.003-.011-.009h-.001L7.88 4.79l-.003-.002-.005-.003-.008-.005h-.002l-.003-.002-.01-.004-.004-.002-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.2.2 0 0 0 .039.038l.001.001.01.006.004.002.008.004.007.003.005.002.01.003h.003a.2.2 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.16.16 0 0 0-.108.044h-.001l-.001.002-.002.003a.16.16 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.16.16 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z"
+            />
+          </svg>
+        </a>
+        <a
+          href="#"
+          class="d-flex align-items-center justify-content-center rounded-circle border border-light"
+          style="width: 40px; height: 40px"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-youtube"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+            />
+          </svg>
+        </a>
+        <a
+          href="#"
+          class="d-flex align-items-center justify-content-center rounded-circle border border-light"
+          style="width: 40px; height: 40px"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="white"
+            class="bi bi-facebook"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.215 23.0943V14.5012H19.0987L19.53 11.1524H16.215V9.01492C16.215 8.04555 16.485 7.38367 17.8743 7.38367H19.6481V4.38367C18.7892 4.29432 17.926 4.25176 17.0625 4.25617C14.5087 4.25617 12.75 5.81242 12.75 8.68305V11.1524H9.86621V14.5012H12.75V23.0943H16.215Z"
+            />
+          </svg>
+        </a>
+      </div>
+      <div>
+        <p class="copyright fs-body2">
+          copyright © 2025 ZOBAA 旅遊網站 All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* 行動板上下pagging 80px */
+  .py-custom {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  /* 桌機板上下pagging 100px */
+  @media (min-width: 992px) {
+    .py-custom {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
+</style>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        breakpoints: {
+          768: { slidesPerView: 4, spaceBetween: 24 },
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: true,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
